@@ -1,0 +1,1 @@
+dotnet publish AzureKeyVaultExplorer.csproj /p:PublishProfile=<Properties\PublishProfiles\SingleExecutable.pubxml> /p:DebugType=None /p:DebugSymbols=false
