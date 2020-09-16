@@ -47,6 +47,9 @@ Ordering: you should either specify `SortOrder` for all key vaults or for none. 
 * `MinifyCss` and `ObfuscateJs` let you configure the compressing of the assets. Be aware, obfuscation works only for transpiled scripts
 * `OpenDirectoryOnFinish` will open the folder with rendered HTMLs after execution
 
+### HTML UI
+[!HTML UI](https://github.com/olegvnm/AzureKeyVaultExplorer/blob/master/Assets/images/screenshot/result.png?raw=true)
+
 ### Fetched results
 Fetched secrets are located in `Results` folder. This folder is gets cleaned on every run.
 
