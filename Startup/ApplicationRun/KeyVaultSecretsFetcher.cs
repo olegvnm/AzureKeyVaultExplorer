@@ -56,8 +56,9 @@ namespace AzureKeyVaultExplorer.Startup.ApplicationRun
                 .ToDictionary(x => x.Title, x => (IConfigurationRoot) _configurationHelper.BuildKeyVaultConfiguration(x.Title, x.Endpoint, _config[$"{x.Title}AppClientId"], _config[$"{x.Title}AppClientSecret"]))
                 .Select(x => _templateService.Render($"Azure {x.Key} Key Vault Secrets", $"{x.Key}: " + _config[$"KeyVault{x.Key}"], x.Value));
 
-            _directoryService.PrepareResultsDirectory();
+            Console.WriteLine();
 
+            _directoryService.PrepareResultsDirectory();
             renderedTemplates.ToList().ForEach(x => _fileService.Create(x));
         }
     }

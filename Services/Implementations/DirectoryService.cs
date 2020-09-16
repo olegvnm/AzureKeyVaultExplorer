@@ -13,8 +13,6 @@ namespace AzureKeyVaultExplorer.Services.Implementations
         {
             var directoryInfo = Directory.CreateDirectory(Constant.ResultsDirectoryTitle);
             directoryInfo.GetFiles().ToList().ForEach(f => f.Delete());
-
-            Console.WriteLine();
         }
 
         public void OpenResultsDirectory()
