@@ -1,7 +1,7 @@
 
 # Azure Key Vault Explorer
 
-This is dotnet core application that allows to explore secrets from Azure Key Vaults using key vault's Url, ClientId and ClientSecret. At the end it renders HTML page with all secrets found in key vault(s).
+This is dotnet core application that allows to explore secrets from Azure Key Vaults using key vault's `Url`, `ClientId` and `ClientSecret`. At the end it renders HTML page(s) with all secrets found in key vault(s).
 
 ## Getting Started
 
@@ -34,10 +34,9 @@ App works with `appconfig.json` configuration file. Format of file:
   "OpenDirectoryOnFinish": true
 }
 ```
-For each key vaults you want to fetch secrets config should contain at least 3 params: `KeyVault`, `AppClientId`, `AppClientSecret`. 
+For each key vault you want to fetch secrets config should contain at least 3 params: `KeyVault`, `AppClientId`, `AppClientSecret`. 
 
-Let's say you want to fetch **Prod** key vault. 
-Then you should provide 'KeyVault**Prod**', '**Prod**AppClientId', '**Prod**AppClientSecret'.
+For example if you want to fetch **Prod** key vault, you should provide 'KeyVault**Prod**', '**Prod**AppClientId', '**Prod**AppClientSecret'.
 
 Ordering: you should either specify `SortOrder` for all key vaults or for none. Values must be distinct!
 
@@ -48,7 +47,7 @@ Ordering: you should either specify `SortOrder` for all key vaults or for none. 
 * `MinifyCss` and `ObfuscateJs` let you configure the compressing of the assets. Be aware, obfuscation works only for transpiled scripts
 * `OpenDirectoryOnFinish` will open the folder with rendered HTMLs after execution
 
-### Fetching results
+### Fetched results
 Fetched secrets are located in `Results` folder. This folder is gets cleaned on every run.
 
 ## Publishing
@@ -62,7 +61,7 @@ Both options will give you the same output.
 ## Acknowledgments
 
 This solution uses next tools:
-* DotLiquid - NuGet package, HTML templating and rendering
-* Toastify - JS and CSS lib,  UI notifications (toasts)
-* YUICompressor - NuGet package, CSS minification, JS obfuscation
-* Bootstrap - CSS lib, UI styles
+* DotLiquid - NuGet package; HTML templating and rendering
+* Toastify - JS and CSS libs;  UI notifications (toasts)
+* YUICompressor - NuGet package; CSS minification, JS obfuscation
+* Bootstrap - CSS lib; UI styles
