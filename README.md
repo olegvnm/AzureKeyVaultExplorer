@@ -49,6 +49,7 @@ Ordering: you should either specify `SortOrder` for all key vaults or for none. 
 
 ### HTML UI
 Rendered HTML result example:
+
 ![HTML UI](./Assets/images/screenshot/result2.png?raw=true)
 
 ### Fetched results
