@@ -48,6 +48,8 @@ Ordering: you should either specify `SortOrder` for all key vaults or for none. 
 * `OpenDirectoryOnFinish` will open the folder with rendered HTMLs after execution
 
 ### HTML UI
+Rendered HTML example:
+
 ![HTML UI](./Assets/images/screenshot/result.png?raw=true)
 
 ### Fetched results
