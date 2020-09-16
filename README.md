@@ -48,7 +48,7 @@ Ordering: you should either specify `SortOrder` for all key vaults or for none. 
 * `OpenDirectoryOnFinish` will open the folder with rendered HTMLs after execution
 
 ### HTML UI
-[!HTML UI](https://github.com/olegvnm/AzureKeyVaultExplorer/blob/master/Assets/images/screenshot/result.png?raw=true)
+![HTML UI](./Assets/images/screenshot/result.png?raw=true)
 
 ### Fetched results
 Fetched secrets are located in `Results` folder. This folder is gets cleaned on every run.
