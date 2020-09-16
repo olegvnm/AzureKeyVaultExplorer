@@ -2,6 +2,7 @@
 {
     public interface IDirectoryService
     {
-        public void OpenResultsDirectory();
+        void PrepareResultsDirectory();
+        void OpenResultsDirectory();
     }
 }

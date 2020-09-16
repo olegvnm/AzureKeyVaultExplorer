@@ -5,6 +5,6 @@ namespace AzureKeyVaultExplorer.Services.Interfaces
 {
     public interface ITemplateService
     {
-        public RenderedTemplate Render(string pageTitle, string tableTitle, IConfigurationRoot secretsConfiguration);
+        RenderedTemplate Render(string pageTitle, string tableTitle, IConfigurationRoot secretsConfiguration);
     }
 }

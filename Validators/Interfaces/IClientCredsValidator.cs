@@ -2,6 +2,6 @@
 {
     public interface IClientCredsValidator
     {
-        public void Validate(string vaultEnvironment, string clientId, string clientSecret);
+        void Validate(string vaultEnvironment, string clientId, string clientSecret);
     }
 }

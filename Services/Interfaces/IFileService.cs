@@ -4,6 +4,6 @@ namespace AzureKeyVaultExplorer.Services.Interfaces
 {
     public interface IFileService
     {
-        public void Create(RenderedTemplate template);
+        void Create(RenderedTemplate template);
     }
 }

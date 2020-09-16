@@ -2,6 +2,6 @@
 {
     public interface IApplicationRunner
     {
-        public void Run();
+        void Run();
     }
 }
