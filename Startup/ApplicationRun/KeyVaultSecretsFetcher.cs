@@ -1,6 +1,9 @@
-﻿using AzureKeyVaultExplorer.Models;
+﻿using AzureKeyVaultExplorer.Extensions;
+using AzureKeyVaultExplorer.Models;
 using AzureKeyVaultExplorer.Services;
 using AzureKeyVaultExplorer.Services.Interfaces;
+using AzureKeyVaultExplorer.Services.Interfaces.FileSystem;
+using AzureKeyVaultExplorer.Services.Interfaces.Template;
 using AzureKeyVaultExplorer.Validators.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -38,12 +41,12 @@ namespace AzureKeyVaultExplorer.Startup.ApplicationRun
 
         public void Run()
         {
-            var allKeyVaults = _keyVaultsProvider.GetFromConfig(_config);
+            var configKeyVaults = _keyVaultsProvider.GetFromConfig(_config);
 
-            ConsoleHelper.PrintKeyVaultSelectingMessage(allKeyVaults);
+            ConsoleHelper.PrintKeyVaultSelectingMessage(configKeyVaults);
             var readKey = Console.ReadKey(true);
 
-            var keyVaultsToProcess = allKeyVaults
+            var keyVaultsToProcess = configKeyVaults
                 .Where(x => readKey.Key.Equals(ConsoleKey.Enter) || x.Key == int.Parse(readKey.KeyChar.ToString()))
                 .ToDictionary(x => x.Key, x => x.Value);
 
@@ -51,10 +54,9 @@ namespace AzureKeyVaultExplorer.Startup.ApplicationRun
 
             Console.WriteLine($"\nSelected key vaults: \n\n{string.Join("\n", keyVaultsToProcess.Select(x => x.Value.Title))}\n");
 
-            var renderedTemplates = keyVaultsToProcess
-                .Select(x => new KeyVault {Title = x.Value.Title, Endpoint = x.Value.Endpoint})
-                .ToDictionary(x => x.Title, x => (IConfigurationRoot) _configurationHelper.BuildKeyVaultConfiguration(x.Title, x.Endpoint, _config[$"{x.Title}AppClientId"], _config[$"{x.Title}AppClientSecret"]))
-                .Select(x => _templateService.Render($"Azure {x.Key} Key Vault Secrets", $"{x.Key}: " + _config[$"KeyVault{x.Key}"], x.Value));
+            var renderedTemplates = keyVaultsToProcess.Select(x => new KeyVault { Title = x.Value.Title, Endpoint = x.Value.Endpoint })
+                .ToConfigurationDictionary(_configurationHelper, _config)
+                .ToRenderedTemplates(_templateService, _config);
 
             Console.WriteLine();
 
@@ -62,4 +64,4 @@ namespace AzureKeyVaultExplorer.Startup.ApplicationRun
             renderedTemplates.ToList().ForEach(x => _fileService.Create(x));
         }
     }
-} 
+}

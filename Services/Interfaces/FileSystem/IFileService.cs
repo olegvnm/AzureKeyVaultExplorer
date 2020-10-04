@@ -1,6 +1,6 @@
 ﻿using AzureKeyVaultExplorer.Models;
 
-namespace AzureKeyVaultExplorer.Services.Interfaces
+namespace AzureKeyVaultExplorer.Services.Interfaces.FileSystem
 {
     public interface IFileService
     {

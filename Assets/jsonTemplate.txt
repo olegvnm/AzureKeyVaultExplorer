@@ -1,0 +1,13 @@
+﻿{
+    {%- assign i = 1 -%}
+
+    {%- for secret in secrets -%}
+        "{{-secret.Key-}}": "{{-secret.Value-}}"
+
+        {%- if i != secrets.size -%}
+            ,
+        {% endif %}
+
+        {%- assign i = i | plus: 1 -%}
+    {%- endfor -%}
+}

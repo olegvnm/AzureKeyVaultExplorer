@@ -15,13 +15,13 @@ namespace AzureKeyVaultExplorer.Services.Implementations
                 {
                     InitialData = new Dictionary<string, string>
                     {
-                        {"Access-Control-Allow-Origin", "https://google.com"},
+                        { "Access-Control-Allow-Origin", "https://google.com" },
                         {
                             "Some1ServiceBusConnectionString",
                             "Endpoint=sb://bla-bla-bla-dev.servicebus.windows.net/;SharedAccessKeyName=ListenOnlySharedAccessKey;SharedAccessKey=jfje7HGhd7rwqRl82pqOueMzxuePhdfj="
                         },
-                        {"azure-subscription-key", "lsYyu27bzmJheyGsTfSD8lIDhsi3ik&JG8Gj7gfF"},
-                        {"someTopic", "someTitle"},
+                        { "azure-subscription-key", "lsYyu27bzmJheyGsTfSD8lIDhsi3ik&JG8Gj7gfF" },
+                        { "someTopic", "someTitle" },
                         {
                             "Some2ServiceBusConnectionString",
                             "Endpoint=sb://bla-bla-bla-dev.servicebus.windows.net/;SharedAccessKeyName=ListenOnlySharedAccessKey;SharedAccessKey=hslKhsieEA38Hl8Y836hasYU/hsiYYTGhsu2a="

@@ -1,11 +1,10 @@
-﻿using System;
-using AzureKeyVaultExplorer.Constants;
-using AzureKeyVaultExplorer.Services.Interfaces;
+﻿using AzureKeyVaultExplorer.Constants;
+using AzureKeyVaultExplorer.Services.Interfaces.FileSystem;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace AzureKeyVaultExplorer.Services.Implementations
+namespace AzureKeyVaultExplorer.Services.Implementations.FileSystem
 {
     class DirectoryService : IDirectoryService
     {

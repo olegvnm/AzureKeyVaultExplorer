@@ -4,5 +4,6 @@
     {
         public string Title { get; set; }
         public string Template { get; set; }
+        public string FileExtension { get; set; }
     }
 }

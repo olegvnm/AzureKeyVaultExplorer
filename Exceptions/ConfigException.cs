@@ -7,13 +7,11 @@ namespace AzureKeyVaultExplorer.Exceptions
     {
         public ConfigException(string message) : base($"\n{message}")
         {
-
         }
 
         public ConfigException(params string[] configs) : base(
             $"\nError: configs incorrect setup. {string.Join(", ", configs.Select(x => $"'{x}'"))} not set or set incorrectly.")
         {
-
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿using AzureKeyVaultExplorer.Models;
+﻿using AzureKeyVaultExplorer.Extensions;
+using AzureKeyVaultExplorer.Models;
 using AzureKeyVaultExplorer.Services.Interfaces;
+using AzureKeyVaultExplorer.Services.Interfaces.FileSystem;
+using AzureKeyVaultExplorer.Services.Interfaces.Template;
 using System;
 
 namespace AzureKeyVaultExplorer.Startup.ApplicationRun
@@ -11,7 +14,10 @@ namespace AzureKeyVaultExplorer.Startup.ApplicationRun
         private readonly IFileService _fileService;
         private readonly IDirectoryService _directoryService;
 
-        public MockedSecretsFetcher(ITemplateService templateService, IMockedConfigurationProvider mockedConfigurationProvider, IFileService fileService, IDirectoryService directoryService)
+        public MockedSecretsFetcher(ITemplateService templateService,
+            IMockedConfigurationProvider mockedConfigurationProvider,
+            IFileService fileService,
+            IDirectoryService directoryService)
         {
             _templateService = templateService;
             _mockedConfigurationProvider = mockedConfigurationProvider;
@@ -25,7 +31,8 @@ namespace AzureKeyVaultExplorer.Startup.ApplicationRun
 
             _directoryService.PrepareResultsDirectory();
 
-            RenderedTemplate renderedTemplates = _templateService.Render("Azure Mocked Key Vault Secrets", "https://mocked-secrets.vault.azure.net/", _mockedConfigurationProvider.Get());
+            RenderedTemplate renderedTemplates = _templateService.Render("Azure Mocked Key Vault Secrets",
+                "https://mocked-secrets.vault.azure.net/", _mockedConfigurationProvider.Get().GetFirstProvider().GetConfigurationDictionary());
             _fileService.Create(renderedTemplates);
         }
     }
