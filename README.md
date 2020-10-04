@@ -1,7 +1,7 @@
 
 # Azure Key Vault Explorer
 
-This is dotnet core application that allows to explore secrets from Azure Key Vaults using key vault's Url, ClientId and ClientSecret. At the end it renders HTML page(s) with all secrets found in key vault(s) (optionally JSON file can be generated, see Features).
+This is dotnet core application that allows to explore secrets from Azure Key Vaults using key vault's `Url`, `ClientId` and `ClientSecret`. At the end it renders HTML page(s) with all secrets found in key vault(s) (optionally JSON file can be generated, see Features).
 
 ## Getting Started
 
@@ -43,7 +43,7 @@ Ordering: you should either specify `SortOrder` for all key vaults or for none. 
 
 ### Features
 
-* RenderFormat - parameter to choose format of the result. Possible values: Html, Json
+* `RenderFormat` - parameter to choose format of the result. Possible values: `Html`, `Json`
 * If `IsTestRun` is set to true - app will run the test flow (no secrets will be fetched from the real key vaults)
 * `MinifyCss` and `ObfuscateJs` let you configure the compressing of the assets. Be aware, obfuscation works only for transpiled scripts
 * `OpenDirectoryOnFinish` will open the folder with rendered HTMLs after execution
