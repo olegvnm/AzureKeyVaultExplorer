@@ -28,6 +28,7 @@ App works with `appconfig.json` configuration file. Format of file:
   "QaAppClientSecret": "bla-bla-bla-secret=",
   "QaSortOrder": 2,
  
+  "RenderFormat": "Html",
   "IsTestRun": true,
   "MinifyCss": true,
   "ObfuscateJs": true,
